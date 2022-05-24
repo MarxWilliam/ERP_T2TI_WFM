@@ -1,0 +1,75 @@
+const conexao = require('../config/db_config.js');
+const {{class}} = require('../model/{{classLower}}.js');
+
+class {{class}}Service {
+
+    static ConsultarLista(result) {
+        {{class}}.findAll().then(lista{{class}} => {
+            result(lista{{class}}, null);
+        }).catch(function(erro) {
+            result(null, erro);
+        });
+    };
+
+    static ConsultarListaFiltroValor(filtro, result) {
+        var sql = "select * from {{classLower}} where " + filtro.where;
+        {{class}}.sequelize
+        .query(sql, {
+            model: {{class}},
+            maptoModel: true  //para verificar os campos mapeados
+        })
+        .then(lista{{class}} => {
+            result(lista{{class}}, null);
+        })
+        .catch(function(erro) {
+            result(null, erro);
+        });
+    };
+
+    static ConsultarObjeto(Id, result) {
+        {{class}}.findByPk(Id).then({{classLower}} => {
+            result({{classLower}}, null);
+        }).catch(function(erro) {
+            result(null, erro);
+        });
+    };
+
+    static Inserir({{classLower}}Json, result) {
+        {{class}}.create({{classLower}}Json).then({{classLower}} => {
+            result({{classLower}}, null);
+        }).catch(function(erro) {
+            result(null, erro);
+        });
+    };
+
+    static Alterar({{classLower}}Json, result) {
+        {{class}}.update({{classLower}}Json, {
+            where: {
+                id: {{classLower}}Json.id
+            }
+        }
+
+        ).then(registrosAtualizados => {
+            result(registrosAtualizados[0], null);
+        }).catch(function(erro) {
+            result(null, erro);
+        });
+    };
+
+    static Excluir(Id, result) {
+        {{class}}.destroy({
+            where: {
+                id: Id
+            }
+        }
+
+        ).then(registrosAtualizados => {
+            result(registrosAtualizados[0], null);
+        }).catch(function(erro) {
+            result(null, erro);
+        });
+    };
+
+}
+
+module.exports = {{class}}Service;

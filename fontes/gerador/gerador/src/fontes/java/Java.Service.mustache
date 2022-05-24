@@ -1,0 +1,52 @@
+package com.t2ti.fenix.services.cadastros;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.t2ti.fenix.model.cadastros.{{class}};
+import com.t2ti.fenix.model.transiente.Filtro;
+import com.t2ti.fenix.repository.cadastros.{{class}}Repository;
+
+@Service
+public class {{class}}Service {
+
+	@Autowired
+	private {{class}}Repository repository;
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	public List<{{class}}> consultarLista(){
+		return repository.findAll();
+	}
+	
+	public List<{{class}}> consultarLista(Filtro filtro){
+		String sql = "SELECT * FROM {{classLower}} WHERE " + filtro.getWhere();
+		Query query = entityManager.createNativeQuery(sql, {{class}}.class);
+		List<{{class}}> lista = (List<{{class}}>) query.getResultList();
+		return lista;
+//		{{class}}Specification especificacao = new {{class}}Specification(filtro);
+//		return repository.findAll(especificacao);
+	}
+	
+	public {{class}} consultarObjeto(Integer id){
+		return repository.findById(id).get();
+	}
+	
+	public {{class}} salvar({{class}} {{classLower}}) {
+		return repository.save({{classLower}});
+	}
+	
+	public void excluir(Integer id) {
+		{{class}} {{classLower}} = consultarObjeto(id);
+		repository.delete({{classLower}});
+	}
+	
+	
+}

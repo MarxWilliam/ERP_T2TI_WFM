@@ -1,0 +1,875 @@
+{
+        "id": 1,
+        "nome": "TESTE PESSOA COMPLETA",
+        "tipo": "M",
+        "site": "",
+        "email": "pcompl@gmail.com",
+        "cliente": "S",
+        "colaborador": "S",
+        "fornecedor": "S",
+        "transportadora": "S",
+        "contador": "S",
+        "objCliente": {
+            "desde": null,
+            "dataCadastro": null,
+            "taxaDesconto": null,
+            "limiteCredito": null,
+            "observacao": "Otimo Cliente"
+        },
+        "objColaborador": {
+            "cargo": {
+                "nome": "EXECUTIVO",
+                "descricao": "",
+                "salario": 15000.000000,
+                "cbo1994": "",
+                "cbo2002": "280489"
+            },
+            "setor": {
+                "descricao": "Gerenciamento da empresa",
+                "nome": "Gerência"
+            },
+            "dataCadastro": null,
+            "dataAdmissao": null,
+            "dataDemissao": null,
+            "ctpsNumero": null,
+            "ctpsSerie": null,
+            "ctpsDataExpedicao": null,
+            "ctpsUf": null,
+            "observacao": null
+        },
+        "objContador": {
+            "nome": "CONTADOR COMPL",
+            "crcInscricao": "969696",
+            "crcUf": "RS"
+        },
+        "objFornecedor": {
+            "desde": null,
+            "dataCadastro": null,
+            "observacao": "Fornecedor Compl"
+        },
+        "listaPessoaContato": [
+            {
+                "email": "marta@gmail.com",
+                "nome": "Marta",
+                "observacao": "Ótima Pessoa"
+            },
+            {
+                "id": 9,
+                "email": "joao@gmail.com",
+                "nome": "João",
+                "observacao": "Amigão"
+            }
+        ],
+        "listaPessoaEndereco": [
+            {
+                "logradouro": "LOGRADOURO PESSOA COMPL",
+                "numero": "2",
+                "complemento": "COMPLEMENTO",
+                "bairro": "BAIRRO",
+                "cidade": "CIDADE",
+                "uf": "DF",
+                "cep": "96933000",
+                "municipioIbge": 1400108,
+                "principal": "S",
+                "entrega": null,
+                "cobranca": null,
+                "correspondencia": null
+            }
+        ],
+        "pessoaFisica": {
+            "cpf": "22222296088",
+            "dataEmissaoRg": null,
+            "dataNascimento": null,
+            "nacionalidade": "Brasileira",
+            "naturalidade": null,
+            "nomePai": null,
+            "orgaoRg": null,
+            "raca": null,
+            "rg": null,
+            "sexo": "M",
+            "estadoCivil": null,
+            "nivelFormacao": null,
+            "nome_MAE": null
+        },
+        "pessoaJuridica": {
+            "cnpj": "01345785909989",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": null,
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [
+            {
+                "numero": "55980278059",
+                "tipo": "0"
+            }
+        ],
+        "objTransportadora": {
+            "dataCadastro": null,
+            "observacao": "Transpostadora Compl"
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+
+{
+	"nome": "Pessoa Completa",
+	"tipo": "J",
+	"site": "",
+	"email": "pcompl@gmail.com",
+	"cliente": "S",
+	"colaborador": "S",
+	"fornecedor": "S",
+	"transportadora": "S",
+	"contador": null,
+	"pessoaJuridica": {
+		"cnpj": "00000000000205",
+		"crt": null,
+		"dataConstituicao": null,
+		"inscricaoEstadual": null,
+		"inscricaoMunicipal": null,
+		"nomeFantasia": "Spring",
+		"tipoRegime": null
+	},
+	"pessoaFisica": {
+		"cpf": "11111111111",
+		"dataEmissaoRg": null,
+		"dataNascimento": null,
+		"nacionalidade": "Brasileira",
+		"naturalidade": null,
+		"nomePai": null,
+		"orgaoRg": null,
+		"raca": null,
+		"rg": null,
+		"sexo": "M",
+		"estadoCivil": null,
+		"nivelFormacao": null,
+		"nome_MAE": null
+	},
+	"listaColaborador": [
+		{
+			"cargo": {
+				"nome": "ADMINISTRADOR da pessoa Comp",
+				"descricao": "",
+				"salario": 5000.000000,
+				"cbo1994": "",
+				"cbo2002": "252105"
+			},
+			"setor": {
+				"descricao": "o que se faz nesse setor",
+				"nome": "Executivo"
+			},
+			"dataCadastro": null,
+			"dataAdmissao": null,
+			"dataDemissao": null,
+			"ctpsNumero": null,
+			"ctpsSerie": null,
+			"ctpsDataExpedicao": null,
+			"ctpsUf": null,
+			"observacao": null
+		}
+	],
+	"listaPessoaEndereco": [
+		{
+			"logradouro": "LOGRADOURO PESSOA COMP",
+			"numero": "2",
+			"complemento": "COMPLEMENTO",
+			"bairro": "BAIRRO",
+			"cidade": "CIDADE",
+			"uf": "DF",
+			"cep": "71000000",
+			"municipioIbge": 5300108,
+			"principal": "S",
+			"entrega": null,
+			"cobranca": null,
+			"correspondencia": null
+		}
+	],
+	"listaPessoaTelefone": [
+		{
+			"numero": "055999999999",
+			"tipo": "1"
+		},
+		{
+			"numero": "055996969696",
+			"tipo": "3"
+		}
+	],
+	"listaPessoaContato": [
+		{
+			"email": "jaquen@gmail.com",
+			"nome": "Jaque",
+			"observacao": "Ã“tima Pessoa"
+		},
+		{
+			"email": "mateus@gmail.com",
+			"nome": "Mateus",
+			"observacao": "AmigÃ£o"
+		},
+		{
+			"email": "natalia@gmail.com",
+			"nome": "NatÃ¡lia",
+			"observacao": "Querida"
+		}
+	],
+	"listaTransportadora": [
+		{
+			"dataCadastro": null,
+			"observacao": "Transpostadora Compl"
+		}
+	]
+}
+
+
+
+
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////7
+
+
+
+
+[
+    {
+        "id": 1,
+        "nome": "TESTE PESSOA COMPLETA",
+        "tipo": "M",
+        "site": "",
+        "email": "pcompl@gmail.com",
+        "cliente": "S",
+        "colaborador": "S",
+        "fornecedor": "S",
+        "transportadora": "S",
+        "contador": "S",
+        "objCliente": {
+            "desde": null,
+            "dataCadastro": null,
+            "taxaDesconto": null,
+            "limiteCredito": null,
+            "observacao": "Otimo Cliente"
+        },
+        "objColaborador": {
+            "cargo": {
+                "nome": "EXECUTIVO",
+                "descricao": "",
+                "salario": 15000.000000,
+                "cbo1994": "",
+                "cbo2002": "280489"
+            },
+            "setor": {
+                "descricao": "Gerenciamento da empresa",
+                "nome": "Gerência"
+            },
+            "dataCadastro": null,
+            "dataAdmissao": null,
+            "dataDemissao": null,
+            "ctpsNumero": null,
+            "ctpsSerie": null,
+            "ctpsDataExpedicao": null,
+            "ctpsUf": null,
+            "observacao": null
+        },
+        "objContador": {
+            "nome": "CONTADOR COMPL",
+            "crcInscricao": "969696",
+            "crcUf": "RS"
+        },
+        "objFornecedor": null,
+        "listaPessoaContato": [
+            {
+                "email": "marta@gmail.com",
+                "nome": "Marta",
+                "observacao": "Ótima Pessoa"
+            },
+            {
+                "id": 9,
+                "email": "joao@gmail.com",
+                "nome": "João",
+                "observacao": "Amigão"
+            }
+        ],
+        "listaPessoaEndereco": [
+            {
+                "logradouro": "LOGRADOURO PESSOA COMPL",
+                "numero": "2",
+                "complemento": "COMPLEMENTO",
+                "bairro": "BAIRRO",
+                "cidade": "CIDADE",
+                "uf": "DF",
+                "cep": "96933000",
+                "municipioIbge": 1400108,
+                "principal": "S",
+                "entrega": null,
+                "cobranca": null,
+                "correspondencia": null
+            }
+        ],
+        "pessoaFisica": {
+            "cpf": "22222296088",
+            "dataEmissaoRg": null,
+            "dataNascimento": null,
+            "nacionalidade": "Brasileira",
+            "naturalidade": null,
+            "nomePai": null,
+            "orgaoRg": null,
+            "raca": null,
+            "rg": null,
+            "sexo": "M",
+            "estadoCivil": null,
+            "nivelFormacao": null,
+            "nome_MAE": null
+        },
+        "pessoaJuridica": {
+            "cnpj": "01345785909989",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": null,
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [
+            {
+                "numero": "55980278059",
+                "tipo": "0"
+            }
+        ],
+        "objTransportadora": {
+            "dataCadastro": null,
+            "observacao": "Transpostadora Compl"
+        }
+    },
+    {
+        "id": 2,
+        "nome": "TESTE PESSOA JURIDICA",
+        "tipo": "J",
+        "site": "",
+        "email": "pj@gmail.com",
+        "cliente": "S",
+        "colaborador": "S",
+        "fornecedor": "S",
+        "transportadora": "S",
+        "contador": null,
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": null,
+        "objFornecedor": null,
+        "listaPessoaContato": [
+            {
+                "id": 2,
+                "email": "joao@gmail.com",
+                "nome": "João",
+                "observacao": "Ótima Pessoa"
+            },
+            {
+                "id": 1,
+                "email": "salete@gmail.com",
+                "nome": "Salete",
+                "observacao": "Ótima Pessoa"
+            }
+        ],
+        "listaPessoaEndereco": [
+            {
+                "id": 9,
+                "logradouro": "LOGRADOURO PESSOA JURIDICA",
+                "numero": "3",
+                "complemento": "COMPLEMENTO",
+                "bairro": "BAIRRO",
+                "cidade": "CIDADE",
+                "uf": "DF",
+                "cep": "72000000",
+                "municipioIbge": 5300108,
+                "principal": "S",
+                "entrega": null,
+                "cobranca": null,
+                "correspondencia": null
+            }
+        ],
+        "pessoaFisica": null,
+        "pessoaJuridica": null,
+        "listaPessoaTelefone": [
+            {
+                "id": 9,
+                "numero": "51960278552",
+                "tipo": "1"
+            }
+        ],
+        "objTransportadora": null
+    },
+    {
+        "id": 3,
+        "nome": "NOME CONTADOR",
+        "tipo": "F",
+        "site": null,
+        "email": "CONTADOR@GMAIL.COM",
+        "cliente": null,
+        "colaborador": null,
+        "fornecedor": null,
+        "transportadora": null,
+        "contador": "S",
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": {
+            "id": 8,
+            "nome": "NOME CONTADOR",
+            "crcInscricao": null,
+            "crcUf": null
+        },
+        "objFornecedor": null,
+        "listaPessoaContato": [],
+        "listaPessoaEndereco": [
+            {
+                "id": 1,
+                "logradouro": "RUA",
+                "numero": "123",
+                "complemento": "COMPLEMENTO",
+                "bairro": "BAIRRO",
+                "cidade": null,
+                "uf": "DF",
+                "cep": "60789548",
+                "municipioIbge": 5300108,
+                "principal": null,
+                "entrega": null,
+                "cobranca": null,
+                "correspondencia": null
+            }
+        ],
+        "pessoaFisica": {
+            "id": 2,
+            "cpf": "22222222222",
+            "dataEmissaoRg": null,
+            "dataNascimento": null,
+            "nacionalidade": "Brasileira",
+            "naturalidade": null,
+            "nomePai": null,
+            "orgaoRg": null,
+            "raca": null,
+            "rg": null,
+            "sexo": "M",
+            "estadoCivil": null,
+            "nivelFormacao": null,
+            "nome_MAE": null
+        },
+        "pessoaJuridica": null,
+        "listaPessoaTelefone": [
+            {
+                "id": 1,
+                "numero": null,
+                "tipo": null
+            }
+        ],
+        "objTransportadora": null
+    },
+    {
+        "id": 4,
+        "nome": "NOME CONTADOR",
+        "tipo": "J",
+        "site": null,
+        "email": "CONTADOR_T2TI@GMAIL.COM",
+        "cliente": null,
+        "colaborador": null,
+        "fornecedor": null,
+        "transportadora": null,
+        "contador": "S",
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": {
+            "id": 9,
+            "nome": "NOME CONTADOR",
+            "crcInscricao": "666999",
+            "crcUf": "DF"
+        },
+        "objFornecedor": null,
+        "listaPessoaContato": [],
+        "listaPessoaEndereco": [
+            {
+                "id": 2,
+                "logradouro": "RUA",
+                "numero": "123",
+                "complemento": "COMPLEMENTO",
+                "bairro": "BAIRRO",
+                "cidade": null,
+                "uf": "DF",
+                "cep": "60789548",
+                "municipioIbge": 5300108,
+                "principal": null,
+                "entrega": null,
+                "cobranca": null,
+                "correspondencia": null
+            }
+        ],
+        "pessoaFisica": null,
+        "pessoaJuridica": {
+            "id": 1,
+            "cnpj": "00000000000191",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": null,
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [
+            {
+                "id": 4,
+                "numero": "06155555555",
+                "tipo": "1"
+            },
+            {
+                "id": 7,
+                "numero": "06188779955",
+                "tipo": "3"
+            }
+        ],
+        "objTransportadora": null
+    },
+    {
+        "id": 5,
+        "nome": "Contador",
+        "tipo": "J",
+        "site": null,
+        "email": "contador@gmail.com",
+        "cliente": null,
+        "colaborador": null,
+        "fornecedor": null,
+        "transportadora": null,
+        "contador": "S",
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": {
+            "id": 10,
+            "nome": "Contador",
+            "crcInscricao": "897669",
+            "crcUf": "RS"
+        },
+        "objFornecedor": null,
+        "listaPessoaContato": [],
+        "listaPessoaEndereco": [
+            {
+                "id": 3,
+                "logradouro": "Rua Goias",
+                "numero": "59",
+                "complemento": null,
+                "bairro": "Ibirapuitã",
+                "cidade": "Alegrete",
+                "uf": "RS",
+                "cep": "96806314",
+                "municipioIbge": 5589078,
+                "principal": null,
+                "entrega": null,
+                "cobranca": null,
+                "correspondencia": null
+            }
+        ],
+        "pessoaFisica": null,
+        "pessoaJuridica": {
+            "id": 2,
+            "cnpj": "01345785909900",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": null,
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [
+            {
+                "id": 5,
+                "numero": "051965413989",
+                "tipo": "1"
+            }
+        ],
+        "objTransportadora": null
+    },
+    {
+        "id": 6,
+        "nome": "Outro Contador",
+        "tipo": "F",
+        "site": null,
+        "email": "outrocontador@gmail.com",
+        "cliente": null,
+        "colaborador": null,
+        "fornecedor": null,
+        "transportadora": null,
+        "contador": "S",
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": {
+            "id": 11,
+            "nome": "Outro Contador",
+            "crcInscricao": "647819",
+            "crcUf": "RS"
+        },
+        "objFornecedor": null,
+        "listaPessoaContato": [],
+        "listaPessoaEndereco": [
+            {
+                "id": 4,
+                "logradouro": "Av. Marcílio Dias",
+                "numero": "472",
+                "complemento": "Apt5",
+                "bairro": "São Luiz",
+                "cidade": "Sapiranga",
+                "uf": "RS",
+                "cep": "95530649",
+                "municipioIbge": 1489379,
+                "principal": null,
+                "entrega": null,
+                "cobranca": null,
+                "correspondencia": null
+            }
+        ],
+        "pessoaFisica": {
+            "id": 1,
+            "cpf": "11111111111",
+            "dataEmissaoRg": null,
+            "dataNascimento": null,
+            "nacionalidade": "Brasileira",
+            "naturalidade": null,
+            "nomePai": null,
+            "orgaoRg": null,
+            "raca": null,
+            "rg": null,
+            "sexo": "M",
+            "estadoCivil": null,
+            "nivelFormacao": null,
+            "nome_MAE": null
+        },
+        "pessoaJuridica": null,
+        "listaPessoaTelefone": [
+            {
+                "id": 2,
+                "numero": "055859789149",
+                "tipo": "1"
+            }
+        ],
+        "objTransportadora": null
+    },
+    {
+        "id": 7,
+        "nome": "Outra Pessoa",
+        "tipo": "F",
+        "site": null,
+        "email": "outrapessoa@gmail.com",
+        "cliente": null,
+        "colaborador": null,
+        "fornecedor": "S",
+        "transportadora": null,
+        "contador": null,
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": null,
+        "objFornecedor": null,
+        "listaPessoaContato": [],
+        "listaPessoaEndereco": [],
+        "pessoaFisica": null,
+        "pessoaJuridica": null,
+        "listaPessoaTelefone": [],
+        "objTransportadora": null
+    },
+    {
+        "id": 28,
+        "nome": "Contador Spring",
+        "tipo": "J",
+        "site": null,
+        "email": "contador@gmail.com",
+        "cliente": null,
+        "colaborador": null,
+        "fornecedor": null,
+        "transportadora": null,
+        "contador": "S",
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": null,
+        "objFornecedor": null,
+        "listaPessoaContato": [],
+        "listaPessoaEndereco": [],
+        "pessoaFisica": null,
+        "pessoaJuridica": {
+            "id": 4,
+            "cnpj": "01234567891011",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": "Empresa Spring",
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [],
+        "objTransportadora": null
+    },
+    {
+        "id": 29,
+        "nome": "Pessoa Spring",
+        "tipo": "J",
+        "site": null,
+        "email": "contador@gmail.com",
+        "cliente": "S",
+        "colaborador": "S",
+        "fornecedor": null,
+        "transportadora": null,
+        "contador": null,
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": null,
+        "objFornecedor": null,
+        "listaPessoaContato": [],
+        "listaPessoaEndereco": [],
+        "pessoaFisica": null,
+        "pessoaJuridica": {
+            "id": 5,
+            "cnpj": "11234567891011",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": "Empresa Spring 2",
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [],
+        "objTransportadora": null
+    },
+    {
+        "id": 32,
+        "nome": "Pessoa Spring 2",
+        "tipo": "J",
+        "site": "",
+        "email": "pj@gmail.com",
+        "cliente": "S",
+        "colaborador": "S",
+        "fornecedor": "S",
+        "transportadora": "S",
+        "contador": null,
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": null,
+        "objFornecedor": null,
+        "listaPessoaContato": [
+            {
+                "id": 8,
+                "email": "megan@gmail.com",
+                "nome": "Megan",
+                "observacao": "Ótima Pessoa"
+            },
+            {
+                "id": 9,
+                "email": "joao@gmail.com",
+                "nome": "João",
+                "observacao": "Amigão"
+            }
+        ],
+        "listaPessoaEndereco": [],
+        "pessoaFisica": null,
+        "pessoaJuridica": {
+            "id": 8,
+            "cnpj": "00000000000192",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": "Spring",
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [],
+        "objTransportadora": null
+    },
+    {
+        "id": 33,
+        "nome": "Pessoa Spring 3",
+        "tipo": "J",
+        "site": "",
+        "email": "pj@gmail.com",
+        "cliente": "S",
+        "colaborador": "S",
+        "fornecedor": "S",
+        "transportadora": "S",
+        "contador": null,
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": null,
+        "objFornecedor": null,
+        "listaPessoaContato": [
+            {
+                "id": 11,
+                "email": "joao@gmail.com",
+                "nome": "João",
+                "observacao": "Amigão"
+            },
+            {
+                "id": 10,
+                "email": "megan@gmail.com",
+                "nome": "Megan",
+                "observacao": "Ótima Pessoa"
+            }
+        ],
+        "listaPessoaEndereco": [],
+        "pessoaFisica": null,
+        "pessoaJuridica": {
+            "id": 9,
+            "cnpj": "00000000000193",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": "Spring",
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [],
+        "objTransportadora": null
+    },
+    {
+        "id": 34,
+        "nome": "Pessoa Spring 3",
+        "tipo": "J",
+        "site": "",
+        "email": "pj@gmail.com",
+        "cliente": "S",
+        "colaborador": "S",
+        "fornecedor": "S",
+        "transportadora": "S",
+        "contador": null,
+        "objCliente": null,
+        "objColaborador": null,
+        "objContador": null,
+        "objFornecedor": null,
+        "listaPessoaContato": [
+            {
+                "id": 17,
+                "email": "anita@gmail.com",
+                "nome": "Anita",
+                "observacao": "Querida"
+            },
+            {
+                "id": 14,
+                "email": "megan@gmail.com",
+                "nome": "Megan",
+                "observacao": "Ótima Pessoa"
+            },
+            {
+                "id": 15,
+                "email": "joao@gmail.com",
+                "nome": "João",
+                "observacao": "Amigão"
+            }
+        ],
+        "listaPessoaEndereco": [],
+        "pessoaFisica": null,
+        "pessoaJuridica": {
+            "id": 13,
+            "cnpj": "00000000000195",
+            "crt": null,
+            "dataConstituicao": null,
+            "inscricaoEstadual": null,
+            "inscricaoMunicipal": null,
+            "nomeFantasia": "Spring",
+            "tipoRegime": null
+        },
+        "listaPessoaTelefone": [],
+        "objTransportadora": null
+    }
+]

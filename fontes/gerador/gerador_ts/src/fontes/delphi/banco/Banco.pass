@@ -1,0 +1,60 @@
+unit Banco;
+
+interface
+
+uses
+  MVCFramework.Serializer.Commons, ModelBase;
+
+type
+
+  [MVCNameCase(ncLowerCase)]
+  TBanco = class(TModelBase)
+  private
+    FId: Integer;
+    FCodigo: string;
+    FNome: string;
+    FUrl: string;
+      
+  public
+    procedure ValidarInsercao; override;
+    procedure ValidarAlteracao; override;
+    procedure ValidarExclusao; override;
+
+    [MVCColumn('ID', True)]
+	[MapperJSONSer('id')]
+	property Id: Integerread FId write FId;
+    [MVCColumn('CODIGO')]
+	[MapperJSONSer('codigo')]
+	property Codigo: stringread FCodigo write FCodigo;
+    [MVCColumn('NOME')]
+	[MapperJSONSer('nome')]
+	property Nome: stringread FNome write FNome;
+    [MVCColumn('URL')]
+	[MapperJSONSer('url')]
+	property Url: stringread FUrl write FUrl;
+      
+  end;
+
+implementation
+
+{ TBanco }
+
+procedure TBanco.ValidarInsercao;
+begin
+  inherited;
+
+end;
+
+procedure TBanco.ValidarAlteracao;
+begin
+  inherited;
+
+end;
+
+procedure TBanco.ValidarExclusao;
+begin
+  inherited;
+
+end;
+
+end.

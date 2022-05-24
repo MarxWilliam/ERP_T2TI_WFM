@@ -1,0 +1,38 @@
+package com.t2ti.fenix.model.cadastros;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
+/**
+ * The persistent class for the {{class}} database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="{{class}}.findAll", query="SELECT {{fl}} FROM {{class}} {{fl}}")
+public class {{class}} implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	{{#fields}}
+    {{{.}}}
+    {{/fields}}
+    {{^fields}}Existe um problema. Campos não enviados.{{/fields}} 
+
+	public {{class}}() {
+	}
+
+ 	{{#properties}}
+    {{{.}}}
+    {{/properties}}
+    {{^properties}}Existe um problema. Propriedades não enviados.{{/properties}} 
+}

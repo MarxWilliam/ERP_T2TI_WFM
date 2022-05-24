@@ -1,0 +1,115 @@
+const {{class}}Service = require('../service/{{classLower}}_service.js');
+const RetornoJsonErro = require('../model/transiente/retorno_json_erro.js');
+const Filtro = require('../model/transiente/filtro.js');
+// consultar a lista
+exports.ConsultarLista = (req, res) => {
+    {{class}}Service.ConsultarLista((lista{{class}}, erro) => {
+        if(erro != null){
+            var jsonErro = new RetornoJsonErro({codigo:500, mensagem: "Erro no servidor [Consultar Lista {{class}}]", erro: erro});
+            res.status(500).send(jsonErro);
+        } else {
+            res.send(lista{{class}});
+        }
+    });
+};
+
+// consultar a lista com filtro
+exports.ConsultarListaFiltroValor = (req, res) => {
+    var filtro = new Filtro({campo: req.params.campo, valor: req.params.valor});
+    {{class}}Service.ConsultarListaFiltroValor(filtro, (lista{{class}}, erro) => {
+        if(erro != null){
+            var jsonErro = new RetornoJsonErro({codigo:500, mensagem: "Erro no servidor [Consultar Lista {{class}}]", erro: erro});
+            res.status(500).send(jsonErro);
+        } else {
+            res.send(lista{{class}});
+        }
+    });
+};
+
+// consultar a lista
+exports.ConsultarObjeto = (req, res) => {
+    {{class}}Service.ConsultarObjeto(req.params.Id, ({{classLower}}, erro) => {
+        if(erro != null){
+            var jsonErro = new RetornoJsonErro({codigo:500, mensagem: "Erro servidor [Consultar Objeto {{class}}]", erro: erro});
+            res.status(500).send(jsonErro);
+        } else{
+            if({{classLower}} == null) {
+                var jsonErro = new RetornoJsonErro({codigo:400, mensagem: "Registro não localizado [Consultar Objeto {{class}}]", erro: erro});
+                res.status(400).send(jsonErro);                
+            } else {
+                res.send({{classLower}});
+            }
+        }    
+    });
+};
+
+// inserrir objeto
+exports.Inserir = (req, res) => {
+    var {{classLower}}Json = req.body;
+
+    // valida o conteúdo da requisição
+    if({{classLower}}Json.constructor === Object && Object.keys({{classLower}}Json).length === 0){
+        var jsonErro = new RetornoJsonErro({codigo:400, mensagem: "Objeto inválido [Inserir {{class}}]", erro: erro});
+        res.status(400).send(jsonErro);
+    }
+
+    // salvar objeto no {{classLower}} de dados
+    {{class}}Service.Inserir({{classLower}}Json, ({{classLower}}, erro) => {
+        if(erro != null){
+            var jsonErro = new RetornoJsonErro({codigo:500, mensagem: "Erro servidor [Inserir {{class}}]", erro: erro});
+            res.status(500).send(jsonErro);
+        } else { 
+            res.send({{classLower}}); 
+        }
+    });
+};
+
+// alterar objeto
+exports.Alterar = (req, res) => {
+    var {{classLower}}Json = req.body;
+
+    // valida o conteúdo da requisição
+    if({{classLower}}Json.constructor === Object && Object.keys({{classLower}}Json).length === 0){
+        var jsonErro = new RetornoJsonErro({codigo:400, mensagem: "Objeto inválido [Alterar {{class}}]", erro: erro});
+        res.status(400).send(jsonErro);
+    }
+
+    // valida id do objeto
+    if({{classLower}}Json.id == null){
+        var jsonErro = new RetornoJsonErro({codigo:400, mensagem: "Objeto inválido [Alterar {{class}}]", erro: erro});
+        res.status(400).send(jsonErro);
+    }
+
+    {{class}}Service.ConsultarObjeto({{classLower}}Json.id, ({{classLower}}, erro) => {
+        if(erro != null){
+            var jsonErro = new RetornoJsonErro({codigo:500, mensagem: "Erro servidor [Alterar {{class}} - Consulta]", erro: erro});
+            res.status(500).send(jsonErro);
+        } else{
+            if({{classLower}} == null) {
+                var jsonErro = new RetornoJsonErro({codigo:400, mensagem: "Registro não localizado [Alterar {{class}}]", erro: erro});
+                res.status(400).send(jsonErro);                
+            } else {
+                {{classLower}}Service.Alterar({{classLower}}Json, (registrosAtualizados, erro) => {
+                    if(erro != null){
+                        var jsonErro = new RetornoJsonErro({codigo:500, mensagem: "Erro no servidor [Alterar {{class}} - Update]", erro: erro});
+                        res.status(500).send(jsonErro);
+                    } else { 
+                        res.send({{classLower}}Json); 
+                    }
+                });
+            }
+        }    
+    });
+};
+
+// Excluir objeto
+exports.Excluir = (req, res) => {
+    {{class}}Service.Excluir(req.params.Id, (registrosAtualizados, erro) => {
+        if(erro != null){
+            var jsonErro = new RetornoJsonErro({codigo:500, mensagem: "Erro no Servidor [Excluir {{class}}]", erro: erro});
+            res.status(500).send(jsonErro);
+        } else {
+            res.status(200).send();
+        }
+    });
+};

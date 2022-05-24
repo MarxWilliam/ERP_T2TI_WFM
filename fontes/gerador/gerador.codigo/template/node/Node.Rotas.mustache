@@ -1,0 +1,22 @@
+module.exports = app => {
+
+    const {{classLower}}Controller = require('../controller/{{classLower}}_controller.js');
+
+    // Consultar uma Lista de Objetos
+    app.get('/{{classLower}}', {{classLower}}Controller.ConsultarLista);
+
+    // consultar lista de objetos com filtro
+    app.get('/{{classLower}}/:campo/:valor', {{classLower}}Controller.ConsultarListaFiltroValor);
+
+    // consultar objeto
+    app.get('/{{classLower}}/:Id', {{classLower}}Controller.ConsultarObjeto);
+    
+    // Inserir um Objeto
+    app.post('/{{classLower}}', {{classLower}}Controller.Inserir);
+    
+    // Alterar um Objeto
+    app.put('/{{classLower}}', {{classLower}}Controller.Alterar);
+    
+    // Deletar um Objeto
+    app.delete('/{{classLower}}/:Id', {{classLower}}Controller.Excluir);
+};

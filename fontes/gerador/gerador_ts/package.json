@@ -1,0 +1,30 @@
+{
+  "name": "t2ti_erp_fenix_gerador",
+  "version": "1.0.0",
+  "description": "T2Ti ERP Fenix Gerador de Código",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node ./src/index.ts",
+    "typeorm": "./node_modules/.bin/typeorm "
+  },
+  "keywords": [],
+  "author": "T2Ti",
+  "license": "MIT",
+  "dependencies": {
+    "@types/capitalize": "^1.0.1",
+    "@types/express": "^4.17.7",
+    "@types/mustache": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "capitalize": "^2.0.3",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "mustache": "^4.0.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "tsc": "^1.20150623.0",
+    "typeorm": "^0.2.18",
+    "typescript": "^3.9.7"
+  }
+}

@@ -1,0 +1,16 @@
+const Sequelize = require('sequelize');
+const sequelize = require('../config/db_config.js');
+
+const Model = Sequelize.Model;
+class {{class}} extends Model { }
+{{class}}.init({
+    {{#fields}}
+    {{{.}}}
+    {{/fields}}
+    {{^fields}}Existe um problema. Campos não enviados.{{/fields}} 
+}, {
+    sequelize,
+    modelName: '{{classLower}}'
+}); 
+
+module.exports = {{class}};

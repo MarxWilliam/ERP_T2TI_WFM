@@ -1,0 +1,150 @@
+﻿{*****************************************************************
+Title: T2Ti ERP Fenix
+Description: Model relacionado a tabela [{{table}}]
+License: Apache2
+Copyright: Copyright 2020 (C) William Marx
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+      The author may be contacted at:
+          marxwilliamf@gmail.com
+
+@Author: William Felipe Marx (marxwilliamf@gmail.com)
+@version: 1.0.0
+*****************************************************************}
+
+unit {{class}}Service;
+
+interface
+
+uses
+  {{#uses}}
+  {{{.}}}
+  {{/uses}}
+  System.SysUtils, System.Generics.Collections, ServiceBase, MVCFramework.DataSet.Utils;
+
+type
+
+  T{{class}}Service = class(TServiceBase)
+  private
+  {{#anexaObjetosVinculadosInterface}}
+  {{{.}}}
+  {{/anexaObjetosVinculadosInterface}}
+  public
+    class function ConsultarLista: TObjectList<T{{class}}>;
+    class function ConsultarListaFiltro(AWhere: string): TObjectList<T{{class}}>;
+    class function ConsultarObjeto(AId: Integer): T{{class}};
+    class procedure Inserir(A{{class}}: T{{class}});
+    class function Alterar(A{{class}}: T{{class}}): Integer;
+    class function Excluir(A{{class}}: T{{class}}): Integer;
+  end;
+
+var
+  sql: string;
+
+
+implementation
+
+{ T{{class}}Service }
+
+{{#anexaObjetosVinculadosImplementationObjetoAbertura}}
+{{{.}}}
+{{/anexaObjetosVinculadosImplementationObjetoAbertura}}
+{{#anexaObjetosVinculados}}
+{{{.}}}
+{{/anexaObjetosVinculados}}
+{{#anexaObjetosVinculadosImplementationObjetoFechamento}}
+{{{.}}}
+{{/anexaObjetosVinculadosImplementationObjetoFechamento}}
+
+{{#anexaObjetosVinculadosImplementationLista}}
+{{{.}}}
+{{/anexaObjetosVinculadosImplementationLista}}
+
+class function T{{class}}Service.ConsultarLista: TObjectList<T{{class}}>;
+begin
+  sql := 'SELECT * FROM {{table}} ORDER BY ID';
+  try
+    Result := GetQuery(sql).AsObjectList<T{{class}}>;
+  	{{chamaAnexarObjetosVinculados}}
+  finally
+    Query.Close;
+    Query.Free;
+  end;
+end;
+
+class function T{{class}}Service.ConsultarListaFiltro(AWhere: string): TObjectList<T{{class}}>;
+begin
+  sql := 'SELECT * FROM {{table}} where ' + AWhere;
+  try
+    Result := GetQuery(sql).AsObjectList<T{{class}}>;
+    {{chamaAnexarObjetosVinculados}}
+  finally
+    Query.Close;
+    Query.Free;
+  end;
+end;
+
+class function T{{class}}Service.ConsultarObjeto(AId: Integer): T{{class}};
+begin
+  sql := 'SELECT * FROM {{table}} WHERE ID = ' + IntToStr(AId);
+  try
+    GetQuery(sql);
+    if not Query.Eof then
+    begin
+      Result := Query.AsObject<T{{class}}>;
+  	  {{chamaAnexarObjetosVinculados}}
+    end
+    else
+      Result := nil;
+  finally
+    Query.Close;
+    Query.Free;
+  end;
+end;
+
+class procedure T{{class}}Service.Inserir(A{{class}}: T{{class}});
+{{#linkedListInserir}}
+{{{.}}}
+{{/linkedListInserir}}
+begin
+  A{{class}}.ValidarInsercao;
+  A{{class}}.Id := InserirBase(A{{class}}, '{{table}}');
+
+  {{#insereObjetosVinculados}}
+  {{{.}}}
+  {{/insereObjetosVinculados}}
+end;
+
+class function T{{class}}Service.Alterar(A{{class}}: T{{class}}): Integer;
+{{#linkedListAlterar}}
+{{{.}}}
+{{/linkedListAlterar}}
+begin
+  A{{class}}.ValidarAlteracao;
+  Result := AlterarBase(A{{class}}, '{{table}}');
+{{#alteraObjetosVinculados}}
+{{{.}}}
+{{/alteraObjetosVinculados}}
+end;
+
+class function T{{class}}Service.Excluir(A{{class}}: T{{class}}): Integer;
+begin
+  A{{class}}.ValidarExclusao;
+  {{#excluiFilhos}}
+  {{{.}}}
+  {{/excluiFilhos}}
+  Result := ExcluirBase(A{{class}}.Id, '{{table}}')
+end;
+
+end.

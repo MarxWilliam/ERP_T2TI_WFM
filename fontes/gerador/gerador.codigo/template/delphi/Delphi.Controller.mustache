@@ -1,0 +1,206 @@
+{*****************************************************************
+Title: T2Ti ERP Fenix
+Description: Model relacionado a tabela [{{table}}]
+License: Apache2
+Copyright: Copyright 2020 (C) William Marx
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+      The author may be contacted at:
+          marxwilliamf@gmail.com
+
+@Author: William Felipe Marx (marxwilliamf@gmail.com)
+@version: 1.0.0
+*****************************************************************}
+
+unit {{class}}Controller;
+
+interface
+
+uses mvcframework, mvcframework.Commons,
+  System.SysUtils,
+  MVCFramework.SystemJSONUtils;
+
+type
+
+  [MVCDoc('CRUD {{class}}')]
+  [MVCPath('/{{path}}')]
+  T{{class}}Controller = class(TMVCController)
+  public
+    [MVCDoc('Retorna uma lista de objetos')]
+    [MVCPath]
+    [MVCHTTPMethod([httpGET])]
+    procedure ConsultarLista;
+
+    [MVCDoc('Retorna uma lista de objetos com base no Filtro')]
+    [MVCPath('/($campo)/($valor)')]
+    [MVCHTTPMethod([httpGET])]
+    procedure ConsultarListaFiltroValor(campo: string; valor: string);
+
+    [MVCDoc('Retorna um objeto com base no ID')]
+    [MVCPath('/($id)')]
+    [MVCHTTPMethod([httpGET])]
+    procedure ConsultarObjeto(id: Integer);
+
+    [MVCDoc('Insere um novo objeto')]
+    [MVCPath]
+    [MVCHTTPMethod([httpPOST])]
+    procedure Inserir(Context: TWebContext);
+
+    [MVCDoc('Altera um objeto com base no ID')]
+    [MVCPath]
+    [MVCHTTPMethod([httpPUT])]
+    procedure Alterar(Context: TWebContext);
+
+    [MVCDoc('Exclui um objeto com base no ID')]
+    [MVCPath('/($id)')]
+    [MVCHTTPMethod([httpDelete])]
+    procedure Excluir(id: Integer);
+  end;
+
+implementation
+
+{ T{{class}}Controller }
+
+uses {{class}}Service, {{class}}, Commons;
+
+procedure T{{class}}Controller.ConsultarLista;
+begin
+  try
+    Render<T{{class}}>(T{{class}}Service.ConsultarLista);
+  except
+    on E: EServiceException do
+    begin
+      raise EMVCException.Create
+        ('Erro no Servidor [Consultar Lista {{class}}] - Exce��o: ' + E.Message,
+        E.StackTrace, 0, 500);
+    end
+    else
+      raise;
+  end;
+end;
+
+procedure T{{class}}Controller.ConsultarListaFiltroValor(campo, valor: string);
+begin
+  try
+    Render<T{{class}}>(T{{class}}Service.ConsultarListaFiltroValor(campo, valor));
+  except
+    on E: EServiceException do
+    begin
+      raise EMVCException.Create
+        ('Erro no Servidor [Consultar Lista Filtro Valor {{class}}] - Exce��o: ' + E.Message,
+        E.StackTrace, 0, 500);
+    end
+    else
+      raise;
+  end;
+end;
+
+procedure T{{class}}Controller.ConsultarObjeto(id: Integer);
+var
+  {{class}}: T{{class}};
+begin
+  try
+    {{class}} := T{{class}}Service.ConsultarObjeto(id);
+
+    if Assigned({{class}}) then
+      Render({{class}})
+    else
+      raise EMVCException.Create
+        ('Registro n�o localizado [Consultar Objeto {{class}}]', '', 0, 404);
+  except
+    on E: EServiceException do
+    begin
+      raise EMVCException.Create
+        ('Erro no Servidor [Consultar Objeto {{class}}] - Exce��o: ' + E.Message,
+        E.StackTrace, 0, 500);
+    end
+    else
+      raise;
+  end;
+end;
+
+procedure T{{class}}Controller.Inserir(Context: TWebContext);
+var
+  {{class}}: T{{class}};
+begin
+  try
+    {{class}} := Context.Request.BodyAs<T{{class}}>;
+  except
+    on E: EServiceException do
+    begin
+      raise EMVCException.Create('Objeto inv�lido [Inserir {{class}}] - Exce��o: ' +
+        E.Message, E.StackTrace, 0, 400);
+    end
+    else
+      raise;
+  end;
+
+  try
+    T{{class}}Service.Inserir({{class}});
+    Render(200, 'Objeto inserido com sucesso.');
+  finally
+    FreeAndNil({{class}});
+  end;
+end;
+
+procedure T{{class}}Controller.Alterar(Context: TWebContext);
+var
+  {{class}}, {{class}}DB: T{{class}};
+begin
+  try
+    {{class}} := Context.Request.BodyAs<T{{class}}>;
+  except
+    on E: EServiceException do
+    begin
+      raise EMVCException.Create('Objeto inv�lido [Alterar {{class}}] - Exce��o: ' +
+        E.Message, E.StackTrace, 0, 400);
+    end
+    else
+      raise;
+  end;
+
+  {{class}}DB := T{{class}}Service.ConsultarObjeto({{class}}.id);
+
+  if not Assigned({{class}}DB) then
+    raise EMVCException.Create('Objeto com ID inv�lido [Alterar {{class}}]',
+      '', 0, 400);
+
+  try
+    T{{class}}Service.Alterar({{class}});
+    Render(200, 'Objeto alterado com sucesso.');
+  finally
+    FreeAndNil({{class}});
+    FreeAndNil({{class}}DB);
+  end;
+end;
+
+procedure T{{class}}Controller.Excluir(id: Integer);
+var
+  {{class}}: T{{class}};
+begin
+  {{class}} := T{{class}}Service.ConsultarObjeto(id);
+
+  if not Assigned({{class}}) then
+    raise EMVCException.Create('Objeto com ID inv�lido [Excluir {{class}}]',
+      '', 0, 400);
+
+  try
+    T{{class}}Service.Excluir({{class}});
+    Render(200, 'Objeto exclu�do com sucesso.');
+  finally
+    FreeAndNil({{class}})
+  end;
+end;
+
+end.
